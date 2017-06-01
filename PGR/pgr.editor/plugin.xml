@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pgr -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pgr.presentation.PgrModelWizardID"
+            name="%_UI_PgrModelWizard_label"
+            class="pgr.presentation.PgrModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PgrModelFile.gif">
+         <description>%_UI_PgrModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pgr -->
+      <editor
+            id="pgr.presentation.PgrEditorID"
+            name="%_UI_PgrEditor_label"
+            icon="icons/full/obj16/PgrModelFile.gif"
+            extensions="pgr"
+            class="pgr.presentation.PgrEditor"
+            contributorClass="pgr.presentation.PgrActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pgr -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pgr.domain.presentation.DomainModelWizardID"
+            name="%_UI_DomainModelWizard_label"
+            class="pgr.domain.presentation.DomainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DomainModelFile.gif">
+         <description>%_UI_DomainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pgr -->
+      <editor
+            id="pgr.domain.presentation.DomainEditorID"
+            name="%_UI_DomainEditor_label"
+            icon="icons/full/obj16/DomainModelFile.gif"
+            extensions="domain"
+            class="pgr.domain.presentation.DomainEditor"
+            contributorClass="pgr.domain.presentation.DomainActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pgr -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pgr.domain.generators.presentation.GeneratorsModelWizardID"
+            name="%_UI_GeneratorsModelWizard_label"
+            class="pgr.domain.generators.presentation.GeneratorsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GeneratorsModelFile.gif">
+         <description>%_UI_GeneratorsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pgr -->
+      <editor
+            id="pgr.domain.generators.presentation.GeneratorsEditorID"
+            name="%_UI_GeneratorsEditor_label"
+            icon="icons/full/obj16/GeneratorsModelFile.gif"
+            extensions="generators"
+            class="pgr.domain.generators.presentation.GeneratorsEditor"
+            contributorClass="pgr.domain.generators.presentation.GeneratorsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pgr -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pgr.domain.util.presentation.UtilModelWizardID"
+            name="%_UI_UtilModelWizard_label"
+            class="pgr.domain.util.presentation.UtilModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UtilModelFile.gif">
+         <description>%_UI_UtilModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pgr -->
+      <editor
+            id="pgr.domain.util.presentation.UtilEditorID"
+            name="%_UI_UtilEditor_label"
+            icon="icons/full/obj16/UtilModelFile.gif"
+            extensions="util"
+            class="pgr.domain.util.presentation.UtilEditor"
+            contributorClass="pgr.domain.util.presentation.UtilActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pgr -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pgr.ui.presentation.UiModelWizardID"
+            name="%_UI_UiModelWizard_label"
+            class="pgr.ui.presentation.UiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UiModelFile.gif">
+         <description>%_UI_UiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pgr -->
+      <editor
+            id="pgr.ui.presentation.UiEditorID"
+            name="%_UI_UiEditor_label"
+            icon="icons/full/obj16/UiModelFile.gif"
+            extensions="ui"
+            class="pgr.ui.presentation.UiEditor"
+            contributorClass="pgr.ui.presentation.UiActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

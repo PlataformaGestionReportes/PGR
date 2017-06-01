@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/pgr/src" modelPluginID="pgr" modelName="Pgr" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.rose" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>E:\PGR\model\pgr.mdl</foreignModel>
+  <genPackages prefix="Pgr" disposableProviderFactory="true" ecorePackage="pgr.ecore#/">
+    <genClasses ecoreClass="pgr.ecore#//ModelFactory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//ModelFactory/theDomain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//ModelFactory/theUI"/>
+      <genOperations ecoreOperation="pgr.ecore#//ModelFactory/load"/>
+      <genOperations ecoreOperation="pgr.ecore#//ModelFactory/save"/>
+    </genClasses>
+    <nestedGenPackages prefix="Domain" disposableProviderFactory="true" ecorePackage="pgr.ecore#//domain">
+      <genClasses ecoreClass="pgr.ecore#//domain/Domain">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theUI"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theModelFactory"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/listReport"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theViewModelGenerator"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theDataformDiagramGenerator"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theDataformGenerator"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theExcelGenerator"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theExcelUpdater"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theCoordinate"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theMergedRegion"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theComparatorRange"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//domain/Domain/theUnzip"/>
+      </genClasses>
+      <genClasses ecoreClass="pgr.ecore#//domain/Report">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/Report/filePath"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/Report/fileName"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/Report/ownedByDomain"/>
+      </genClasses>
+      <nestedGenPackages prefix="Generators" disposableProviderFactory="true" ecorePackage="pgr.ecore#//domain/generators">
+        <genClasses ecoreClass="pgr.ecore#//domain/generators/ViewModelGenerator">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ViewModelGenerator/modelFactoryQM"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ViewModelGenerator/projection"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ViewModelGenerator/viewModel"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/generators/ViewModelGenerator/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/ViewModelGenerator">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ViewModelGenerator/ViewModelGenerator/modelFactoryQM"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/generateViewModel"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/exploreRelations">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ViewModelGenerator/exploreRelations/parent"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ViewModelGenerator/exploreRelations/parentViewModel"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ViewModelGenerator/exploreRelations/order"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/createViewModel"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/createElement">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ViewModelGenerator/createElement/e"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/getProjectionQM"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ViewModelGenerator/getParent"/>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/generators/DataformDiagramGenerator">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformDiagramGenerator/modelFactory"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformDiagramGenerator/dataformDiagram"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformDiagramGenerator/interface1"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/generators/DataformDiagramGenerator/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/DataformDiagramGenerator">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/DataformDiagramGenerator/modelFactory"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/salvarDiagram">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/salvarDiagram/diagram"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/cargarDiagram"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/resetDiagram">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/resetDiagram/path"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/generateDiagram"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/createDiagram"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/initComponents">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/initComponents/graphicalContainer"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/initComponents/parent"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/createBounds">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/createBounds/x"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/createBounds/y"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/createBounds/width"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/createBounds/height"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformDiagramGenerator/openDiagram">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformDiagramGenerator/openDiagram/diag"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/generators/DataformGenerator">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/modelFactory"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/project"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/dataformDiagram"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/domainDiagram"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/domainClass"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/interface1"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/container"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/path"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/absolutePath"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/dimens"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/amountContainers"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/amountTables"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/relativeX"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/relativeY"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/dataStartRow"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/dataStartCell"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/amountCombos"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/reportName"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/containerEndRow"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/containerEndCell"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/workbook"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/sheet"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/adjacenciesX"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/adjacenciesY"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/visitedCells"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/comboNamesSorted"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/coordenadasComboBox"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/listTables"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/listComboBox"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/listComboCordinate"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/mergedRegions"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/coordenadasInicioContenedores"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/coordenadasFinContenedores"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/DataformGenerator/containers"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/generators/DataformGenerator/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/DataformGenerator">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/DataformGenerator/ruta"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/DataformGenerator/as"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/generate"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/searchBegin"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/setBoundsGraphicalContainer">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setBoundsGraphicalContainer/graphicalContainer"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setBoundsGraphicalContainer/x"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setBoundsGraphicalContainer/y"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setBoundsGraphicalContainer/width"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setBoundsGraphicalContainer/height"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/setAtributesContaimentRelation">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setAtributesContaimentRelation/c"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/setAtributesContaimentRelation/name"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/init"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/resetDataform"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getOrderViewModel"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getExtraInformation"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/identifyMergedRegions"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/searchMergeRegion">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/searchMergeRegion/range"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/searchMergeRegion/nextRow"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/exploreMergedRegions">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/exploreMergedRegions/range"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/visitTable">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/visitTable/region"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getTableColumns">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getTableColumns/region"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getTableColumns/nextRow"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/createTable">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/createTable/region"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/createTable/columns"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/isTableColumn">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isTableColumn/mergeRegion"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/isTable">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isTable/i"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isTable/j"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/visitRegion">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/visitRegion/mergeRegion"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/InitMergedRegions">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/InitMergedRegions/sortedRegions"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/isCellRange">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isCellRange/i"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isCellRange/l"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getDimention"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getNumberTables"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getTables"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/salvarDF"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getXML">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getXML/url"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/marcarTablas">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/marcarTablas/sizes"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/reOrganizarTablas"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getMaxX">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getMaxX/a"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/isValid">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isValid/i"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/isValid/j"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/bfs">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/bfs/i"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/bfs/j"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/recorrerHoja"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/createContainer">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/createContainer/i"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/createContainer/j"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getAmountContainersV">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getAmountContainersV/y"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/calculateV">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/calculateV/y"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/calculateH">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/calculateH/x"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getAmountContainersH">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getAmountContainersH/x"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/capturarNumeros">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/capturarNumeros/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getCoordinates">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getCoordinates/inicio"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getSizes">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getSizes/inicio"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getSizes/fin"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/stractColumn">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/stractColumn/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getSizes2">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getSizes2/inicio"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getSizes2/fin"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getCoordinates2">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getCoordinates2/inicio"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/toInt">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/toInt/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/pow">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/pow/b"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/pow/e"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/getCellValue">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/getCellValue/cell"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/DataformGenerator/createCoordinate">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/createCoordinate/x"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/DataformGenerator/createCoordinate/y"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/generators/ExcelGenerator">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/absolutePath"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/workbook"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/newDataSheet"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/dataSheet"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/columnSheet"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/sheet"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/queryString"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/modelFactoryQM"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/resultSet"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/namesFilters"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/posFilters"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/titlesMap"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/setResult"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/listFixed"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/result"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/tuplesList"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/columns"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/columnsNames"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/columnsIndex"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/acc"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/firstRowFilter"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/posRowIniData"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelGenerator/posCellIniData"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/generators/ExcelGenerator/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/absolutePath"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/listFilter"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/posFilters"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/modelFactoryQM"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/posRowIniData"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/posCellIniData"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator/queryString"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator.1">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator.1/absolutePath"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator.1/listFilter"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/ExcelGenerator.1/posFilters"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createRelations"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/init"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/initDataSheet">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/initDataSheet/indexColum"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/writeFileColumns">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/writeFileColumns/rs"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createTable">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createTable/columns"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createTable/size"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createTable/sheet"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createDataSheet">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createDataSheet/resultSet"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/exploreResult">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/exploreResult/elementResultList"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/exploreResult/tuple"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/execute">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/execute/listFilter"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/execute/titlesMap"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/execute/acc"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/execute/posRowIniData"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/execute/posCellIniData"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/readFile"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/saveExcel"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createNames"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/readSheet"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getNumToCol">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getNumToCol/col"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getResulSet">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getResulSet/sheet"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getSetColum">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getSetColum/resultSet"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getSetColum/column"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getMapOfColumnByColumn">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getMapOfColumnByColumn/resultSet"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getMapOfColumnByColumn/columnSource"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getMapOfColumnByColumn/columnTarget"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createListBox">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createListBox/comboNames"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createListBox/sheet"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createListBox/row"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createListBox/col"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/buildDataSheet">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/buildDataSheet/sheet"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/buildDataSheet/mp"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/buildDataSheet/rowN"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/setIndirect"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/deleteNames">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/deleteNames/workbook"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/nameTableToNameRange">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/nameTableToNameRange/sheet"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/nameTableToNameRange/names"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/countFormula">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/countFormula/targetRow"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/countFormula/targetCell"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/theFormula">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/targetRow"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/targetCell"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/countRow"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/countCell"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/firstCellFilter"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/sizeX"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/theFormula/sizeY"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createDependence">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createDependence/resultSet"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createDependence/titlesMap"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/createDependence/listFilter"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getTitles">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getTitles/resultSet"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/removeDuplicateValues">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/removeDuplicateValues/resultSet"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getAtributtes">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getAtributtes/element"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/createSheetQuery"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/removeSheets"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/copyExcel">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/copyExcel/sourcePath"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/copyExcel/targetPath"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/openFileIntoEditor">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/openFileIntoEditor/path"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getDir">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getDir/absolutePath"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getCellValue">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getCellValue/cell"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelGenerator/getArrayListFromSet">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelGenerator/getArrayListFromSet/s"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/generators/ExcelUpdater">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelUpdater/filePath"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelUpdater/stringQuery"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelUpdater/workbook"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelUpdater/dc"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelUpdater/posFilter"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/generators/ExcelUpdater/listFilter"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/generators/ExcelUpdater/Domain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/ExcelUpdater">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelUpdater/ExcelUpdater/filePath"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/readFile"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/saveExcel"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/executeQuery"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/readSheetQuery"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/createCoordinate">
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelUpdater/createCoordinate/x"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/generators/ExcelUpdater/createCoordinate/y"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/generators/ExcelUpdater/refresh"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Util" disposableProviderFactory="true" ecorePackage="pgr.ecore#//domain/util">
+        <genClasses ecoreClass="pgr.ecore#//domain/util/Coordinate">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/Coordinate/x"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/Coordinate/y"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/util/Coordinate/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/util/Coordinate/compareTo">
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/Coordinate/compareTo/c1"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/util/MergedRegion">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/MergedRegion/text"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/MergedRegion/firstColumn"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/MergedRegion/lastColumn"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/MergedRegion/firstRow"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//domain/util/MergedRegion/lastRow"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/util/MergedRegion/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/util/MergedRegion/MergedRegion">
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/MergedRegion/MergedRegion/text"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/MergedRegion/MergedRegion/firstColumn"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/MergedRegion/MergedRegion/lastColumn"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/MergedRegion/MergedRegion/firstRow"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/MergedRegion/MergedRegion/lastRow"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/util/ComparatorRange">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/util/ComparatorRange/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/util/ComparatorRange/compare">
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/ComparatorRange/compare/arg0"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/ComparatorRange/compare/arg1"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="pgr.ecore#//domain/util/Unzip">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//domain/util/Unzip/theDomain"/>
+          <genOperations ecoreOperation="pgr.ecore#//domain/util/Unzip/copyInputStream">
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/Unzip/copyInputStream/in"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/Unzip/copyInputStream/out"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/util/Unzip/removeExtension">
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/Unzip/removeExtension/fileName"/>
+          </genOperations>
+          <genOperations ecoreOperation="pgr.ecore#//domain/util/Unzip/unzip">
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/Unzip/unzip/url"/>
+            <genParameters ecoreParameter="pgr.ecore#//domain/util/Unzip/unzip/fileName"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Ui" disposableProviderFactory="true" ecorePackage="pgr.ecore#//ui">
+      <genClasses ecoreClass="pgr.ecore#//ui/UI">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference pgr.ecore#//ui/UI/theDomain"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//ui/UI/theModelFactory"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//ui/UI/theReportView"/>
+      </genClasses>
+      <genClasses ecoreClass="pgr.ecore#//ui/ReportView">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//ui/ReportView/ownedByUI"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//ui/ReportView/listReportViewModel"/>
+      </genClasses>
+      <genClasses ecoreClass="pgr.ecore#//ui/ReportViewModel">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pgr.ecore#//ui/ReportViewModel/name"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference pgr.ecore#//ui/ReportViewModel/ownedByReportView"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Datatypes" disposableProviderFactory="true" ecorePackage="pgr.ecore#//datatypes">
+      <genDataTypes ecoreDataType="pgr.ecore#//datatypes/Document"/>
+      <genDataTypes ecoreDataType="pgr.ecore#//datatypes/ResultSet"/>
+      <genDataTypes ecoreDataType="pgr.ecore#//datatypes/EList"/>
+      <nestedGenPackages prefix="Datatypesqm" disposableProviderFactory="true" ecorePackage="pgr.ecore#//datatypes/datatypesqm">
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/ModelFactory"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/ElementoConsulta"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/ResultElement"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/ElementoModeloResultado"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/Resultado"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/TableView"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/DataConnection"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/WhoownmemodelModelFactoryModel"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/Proyeccion"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesqm/EADiagram"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypesdataform" disposableProviderFactory="true"
+          ecorePackage="pgr.ecore#//datatypes/datatypesdataform">
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/ModelFactory"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/DataForm_Diagram"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/Domain_Diagram"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/Containment"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/Container"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/Interface"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/GraphicalContainer"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/Clase"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesdataform/Project"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypesgmf" disposableProviderFactory="true" ecorePackage="pgr.ecore#//datatypes/datatypesgmf">
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesgmf/Bounds"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesgmf/Diagram"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesgmf/Node"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypesjavautil" disposableProviderFactory="true"
+          ecorePackage="pgr.ecore#//datatypes/datatypesjavautil">
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjavautil/ArrayList"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjavautil/List"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjavautil/HashMapStringElementoConsulta"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjavautil/MapStringInteger"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjavautil/Set"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypeapachepoi" disposableProviderFactory="true"
+          ecorePackage="pgr.ecore#//datatypes/datatypeapachepoi">
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypeapachepoi/XSSFWorkbook"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypeapachepoi/XSSFSheet"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypeapachepoi/XSSFCell"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypesjava" disposableProviderFactory="true" ecorePackage="pgr.ecore#//datatypes/datatypesjava">
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjava/Object"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjava/InputStream"/>
+        <genDataTypes ecoreDataType="pgr.ecore#//datatypes/datatypesjava/OutputStream"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

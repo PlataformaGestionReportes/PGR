@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pgr:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pgr="http:///pgr.ecore">
+  <theDomain>
+    <listReport filePath="C:/Users/admin/Desktop/Reportes/Reporte Documentos.xlsx" fileName="Reporte Documentos.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Reportes/Reporte Actores.xlsx" fileName="Reporte Actores.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Reportes/Reporte comunicaciones.xlsx" fileName="Reporte comunicaciones.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Reportes/Reporte Actores.xlsx" fileName="Reporte Actores.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Reporte Documentos filtro contacto - copia.xlsx" fileName="Reporte Documentos filtro contacto - copia.xlsx"/>
+    <listReport filePath="C:/Users/admin/Desktop/Pruebas Ciclo de Vida/Prueba 3 filtros/Reporte Documentos filtro completo.xlsx" fileName="Reporte Documentos filtro completo.xlsx"/>
+  </theDomain>
+  <theUI>
+    <theReportView>
+      <listReportViewModel name="Reporte Documentos.xlsx"/>
+      <listReportViewModel name="Reporte Actores.xlsx"/>
+      <listReportViewModel name="Reporte comunicaciones.xlsx"/>
+      <listReportViewModel name="Reporte Actores.xlsx"/>
+      <listReportViewModel name="Reporte Documentos filtro contacto - copia.xlsx"/>
+      <listReportViewModel name="Reporte Documentos filtro completo.xlsx"/>
+    </theReportView>
+  </theUI>
+</pgr:ModelFactory>

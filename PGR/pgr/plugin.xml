@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr.ecore"
+            class="pgr.PgrPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/domain.ecore"
+            class="pgr.domain.DomainPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/domain/generators.ecore"
+            class="pgr.domain.generators.GeneratorsPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/domain/util.ecore"
+            class="pgr.domain.util.UtilPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/ui.ecore"
+            class="pgr.ui.UiPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes.ecore"
+            class="pgr.datatypes.DatatypesPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes/datatypesqm.ecore"
+            class="pgr.datatypes.datatypesqm.DatatypesqmPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes/datatypesdataform.ecore"
+            class="pgr.datatypes.datatypesdataform.DatatypesdataformPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes/datatypesgmf.ecore"
+            class="pgr.datatypes.datatypesgmf.DatatypesgmfPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes/datatypesjavautil.ecore"
+            class="pgr.datatypes.datatypesjavautil.DatatypesjavautilPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes/datatypeapachepoi.ecore"
+            class="pgr.datatypes.datatypeapachepoi.DatatypeapachepoiPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated pgr -->
+      <package
+            uri="http:///pgr/datatypes/datatypesjava.ecore"
+            class="pgr.datatypes.datatypesjava.DatatypesjavaPackage"
+            genModel="model/pgr.genmodel"/>
+   </extension>
+
+</plugin>
