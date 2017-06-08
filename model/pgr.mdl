@@ -2800,140 +2800,137 @@
 						concurrency 	"Sequential"
 						semantics  	(object Semantic_Info
 						    PDL        	
-|                                                                     try {
-|					workbook = readFile();
-|					columnSheet = workbook.getSheet("Columns");
-|					org.apache.poi.xssf.usermodel.XSSFRow row = columnSheet.getRow(1);
-|					XSSFCell cell;
-|					HashMap<String, int[]> map = new HashMap<String, int[]>();
-|		
-|					for (int i = 0; i <= row.getLastCellNum(); i++) {
-|						cell = row.getCell(i);
-|		
-|						if (cell != null) {
-|							String value = getCellValue(cell);
-|							if (value != "") {
-|								int a[] = new int[100];
-|		
-|								for (int j = 0; j < 100; j++)
-|									a[j] = -1;
-|		
-|								if (value.contains(".")) {
-|									String ss[] = value.split("\\.");
-|									String name = ss[0];
-|									int order = Integer.parseInt(ss[1]);
-|		
-|									if (map.containsKey(name)) {
-|										a = map.get(name);
-|										a[order - 1] = i;
-|										map.put(name, a);
-|									} else {
-|										a[order - 1] = i;
-|										map.put(name, a);
-|		
-|									}
-|		
-|								} else {
-|									a[0] = i;
-|									map.put(value, a);
-|								}
+|		try {
+|			workbook = readFile();
+|			columnSheet = workbook.getSheet("Columns");
+|			org.apache.poi.xssf.usermodel.XSSFRow row = columnSheet.getRow(1);
+|			XSSFCell cell;
+|			HashMap<String, int[]> map = new HashMap<String, int[]>();
+|
+|			for (int i = 0; i <= row.getLastCellNum(); i++) {
+|				cell = row.getCell(i);
+|
+|				if (cell != null) {
+|					String value = getCellValue(cell);
+|					if (value != "") {
+|						int a[] = new int[100];
+|
+|						for (int j = 0; j < 100; j++)
+|							a[j] = -1;
+|
+|						if (value.contains(".")) {
+|							String ss[] = value.split("\\.");
+|							String name = ss[0];
+|							int order = Integer.parseInt(ss[1]);
+|
+|							if (map.containsKey(name)) {
+|								a = map.get(name);
+|								a[order - 1] = i;
+|								map.put(name, a);
+|							} else {
+|								a[order - 1] = i;
+|								map.put(name, a);
+|
 |							}
+|
+|						} else {
+|							a[0] = i;
+|							map.put(value, a);
 |						}
 |					}
-|		
-|					int size = 0;
-|					for (java.util.Map.Entry<String, int[]> entry : map.entrySet()) {
-|						String name = entry.getKey();
-|						columnsNames.add(name);
-|						size++;
-|					}
-|		
-|					java.sql.ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-|					int column = resultSetMetaData.getColumnCount();
-|		
-|					while (resultSet.next()) {
-|						String string = "";
-|		
-|						for (int i = 1; i <= column; i++) {
-|							if (i == column)
-|								string += resultSet.getString(i);
-|							else
-|								string += resultSet.getString(i) + ",";
-|						}
-|						tuplesList.add(string);
-|					}
-|		
-|					if (namesFilters.size() == 0) {
-|						dataSheet = workbook.getSheetAt(0);
-|		
-|						for (int i = 0, rowIndex = posRowIniData; i < tuplesList.size(); i++, rowIndex++) {
-|		
-|							String s = (String) tuplesList.get(i);
-|							org.apache.poi.xssf.usermodel.XSSFRow r = dataSheet.getRow(rowIndex);
-|		
-|							if (r == null)
-|								r = dataSheet.createRow(rowIndex);
-|							String tuplas[] = s.split(",");
-|							int cellIndex = posCellIniData;
-|		
-|							for (java.util.Map.Entry<String, int[]> entry : map.entrySet()) {
-|								int orders[] = entry.getValue();
-|								String concat = "";
-|		
-|								for (int k = 0; k < orders.length && orders[k] != -1; k++) {
-|									concat += tuplas[orders[k]] + " ";
-|								}
-|								org.apache.poi.xssf.usermodel.XSSFCell c = r.createCell(cellIndex);
-|								c.setCellValue(concat.substring(0, concat.length() - 1));
-|								cellIndex++;
-|							}
-|						}
-|		
-|					} else {
-|		
-|						workbook.setSheetHidden(workbook.getSheetIndex("Columns"), true);
-|						if (workbook.getSheet("ResultSet") == null)
-|							dataSheet = workbook.createSheet("ResultSet");
-|						else {
-|							workbook.removeSheetAt(workbook.getSheetIndex("ResultSet"));
-|							dataSheet = workbook.createSheet("ResultSet");
-|						}
-|		
-|						createTable(columnsNames, tuplesList.size(), dataSheet);
-|		
-|						for (int i = 0; i < tuplesList.size(); i++) {
-|		
-|							String s = (String) tuplesList.get(i);
-|							org.apache.poi.xssf.usermodel.XSSFRow r = dataSheet.createRow(i + 1);
-|		
-|							String tuplas[] = s.split(",");
-|		
-|							int j = 0;
-|							for (java.util.Map.Entry<String, int[]> entry : map.entrySet()) {
-|		
-|								int orders[] = entry.getValue();
-|		
-|								String concat = "";
-|								for (int k = 0; k < orders.length && orders[k] != -1; k++) {
-|									concat += tuplas[orders[k]] + " ";
-|								}
-|								org.apache.poi.xssf.usermodel.XSSFCell c = r.createCell(j);
-|								c.setCellValue(concat.substring(0, concat.length() - 1));
-|								j++;
-|							}
-|						}
-|					}
-|		
-|					workbook.setSheetHidden(workbook.getSheetIndex("Columns"), true);
-|					workbook.setSheetHidden(workbook.getSheetIndex("Query"), true);
-|					saveExcel();
-|				} catch (java.sql.SQLException e) {
-|					// TODO Auto-generated catch block
-|					e.printStackTrace();
 |				}
-|			
-|			
-|	
+|			}
+|
+|			int size = 0;
+|			for (Entry<String, int[]> entry : map.entrySet()) {
+|				String name = entry.getKey();
+|				columnsNames.add(name);
+|				size++;
+|			}
+|
+|			java.sql.ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+|			int column = resultSetMetaData.getColumnCount();
+|
+|			while (resultSet.next()) {
+|				String string = "";
+|
+|				for (int i = 1; i <= column; i++) {
+|					if (i == column)
+|						string += resultSet.getString(i);
+|					else
+|						string += resultSet.getString(i) + ",";
+|				}
+|				tuplesList.add(string);
+|			}
+|
+|			if (namesFilters.size() == 0) {
+|				dataSheet = workbook.getSheetAt(0);
+|
+|				for (int i = 0, rowIndex = posRowIniData; i < tuplesList.size(); i++, rowIndex++) {
+|
+|					String s = (String) tuplesList.get(i);
+|					org.apache.poi.xssf.usermodel.XSSFRow r = dataSheet.getRow(rowIndex);
+|
+|					if (r == null)
+|						r = dataSheet.createRow(rowIndex);
+|					String tuplas[] = s.split(",");
+|					int cellIndex = posCellIniData;
+|
+|					for (Entry<String, int[]> entry : map.entrySet()) {
+|						int orders[] = entry.getValue();
+|						String concat = "";
+|
+|						for (int k = 0; k < orders.length && orders[k] != -1; k++) {
+|							concat += tuplas[orders[k]] + " ";
+|						}
+|						org.apache.poi.xssf.usermodel.XSSFCell c = r.createCell(cellIndex);
+|						c.setCellValue(concat.substring(0, concat.length() - 1));
+|						cellIndex++;
+|					}
+|				}
+|
+|			} else {
+|
+|				workbook.setSheetHidden(workbook.getSheetIndex("Columns"), true);
+|				if (workbook.getSheet("ResultSet") == null)
+|					dataSheet = workbook.createSheet("ResultSet");
+|				else {
+|					workbook.removeSheetAt(workbook.getSheetIndex("ResultSet"));
+|					dataSheet = workbook.createSheet("ResultSet");
+|				}
+|
+|				createTable(columnsNames, tuplesList.size(), dataSheet);
+|
+|				for (int i = 0; i < tuplesList.size(); i++) {
+|
+|					String s = (String) tuplesList.get(i);
+|					org.apache.poi.xssf.usermodel.XSSFRow r = dataSheet.createRow(i + 1);
+|
+|					String tuplas[] = s.split(",");
+|
+|					int j = 0;
+|					for (Entry<String, int[]> entry : map.entrySet()) {
+|
+|						int orders[] = entry.getValue();
+|
+|						String concat = "";
+|						for (int k = 0; k < orders.length && orders[k] != -1; k++) {
+|							concat += tuplas[orders[k]] + " ";
+|						}
+|						org.apache.poi.xssf.usermodel.XSSFCell c = r.createCell(j);
+|						c.setCellValue(concat.substring(0, concat.length() - 1));
+|						j++;
+|					}
+|				}
+|			}
+|
+|			workbook.setSheetHidden(workbook.getSheetIndex("Columns"), true);
+|			workbook.setSheetHidden(workbook.getSheetIndex("Query"), true);
+|			saveExcel();
+|		} catch (java.sql.SQLException e) {
+|			// TODO Auto-generated catch block
+|			e.printStackTrace();
+|		}
 						    )
 						opExportControl 	"Public"
 						uid        	0)
@@ -3230,11 +3227,13 @@
 						concurrency 	"Sequential"
 						semantics  	(object Semantic_Info
 						    PDL        	
-|org.apache.poi.xssf.usermodel.XSSFWorkbook workbook = (XSSFWorkbook) sheet.getWorkbook();
+|//TODO
+|		org.apache.poi.xssf.usermodel.XSSFWorkbook workbook = (XSSFWorkbook) sheet.getWorkbook();
 |		org.apache.poi.ss.usermodel.Name name = null;
 |
 |		name = workbook.createName();
-|		String replaceAll = ((String) namesFilters.get(0) + "s").replaceAll(" ", "_");
+|		//TODO
+|		String replaceAll = validationNames((String) namesFilters.get(0) + "s");
 |		name.setNameName(replaceAll);
 |		String colIni = getNumToCol(0);
 |		XSSFSheet sheet2 = workbook.getSheet("Datos");
@@ -3262,7 +3261,6 @@
 |						((pgr.domain.util.impl.CoordinateImpl) posFilters.get(0)).getY(),
 |						((pgr.domain.util.impl.CoordinateImpl) posFilters.get(0)).getY()));
 |		sheet.addValidationData(validation);
-|	
 						    )
 						opExportControl 	"Public"
 						uid        	0)
@@ -3318,22 +3316,27 @@
 						concurrency 	"Sequential"
 						semantics  	(object Semantic_Info
 						    PDL        	
-|
-|		
-|		
-|				org.apache.poi.ss.usermodel.DataValidationHelper helper = sheet.getDataValidationHelper();
-|				org.apache.poi.ss.usermodel.DataValidationConstraint constraint = null;
-|				org.apache.poi.ss.usermodel.DataValidation validation = null;
-|				for (int i = 1; i < posFilters.size(); i++) {
-|					String cell = getNumToCol(  ((pgr.domain.util.impl.CoordinateImpl)posFilters.get(i-1)).getY());
-|					constraint = helper.createFormulaListConstraint(
-|							"INDIRECT(SUBSTITUTE(" + sheet.getSheetName() + "!$" + cell + "$" +   ( ((pgr.domain.util.impl.CoordinateImpl)posFilters.get(i-1)).getX() + 1) + ",\" \", \"_\"))");			
-|					validation = helper.createValidation(constraint, new org.apache.poi.ss.util.CellRangeAddressList(  ((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getX(),
-|							((pgr.domain.util.impl.CoordinateImpl)posFilters.get(i)).getX(),((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getY(), ((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getY()));
-|					sheet.addValidationData(validation);
-|				}
-|			
-|	
+|		//TODO
+|		org.apache.poi.ss.usermodel.DataValidationHelper helper = sheet.getDataValidationHelper();
+|		org.apache.poi.ss.usermodel.DataValidationConstraint constraint = null;
+|		org.apache.poi.ss.usermodel.DataValidation validation = null;
+|		for (int i = 1; i < posFilters.size(); i++) {
+|			String cell = getNumToCol(((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i - 1)).getY());
+|			String cadena =  "CONCATENATE(\" \"," + sheet.getSheetName() + "!$" + cell
+|					+ "$" + (((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i - 1)).getX() + 1)
+|					+ ")";
+|			constraint = helper.createFormulaListConstraint("INDIRECT("
+|					+ "SUBSTITUTE("+ "SUBSTITUTE("+ "SUBSTITUTE("+cadena+ ", \" \",\"_\"),"
+|					+ "\"-\", \"_\"),\"/\",\"_\")"
+|					+ ")");
+|			validation = helper.createValidation(constraint,
+|					new org.apache.poi.ss.util.CellRangeAddressList(
+|							((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getX(),
+|							((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getX(),
+|							((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getY(),
+|							((pgr.domain.util.impl.CoordinateImpl) posFilters.get(i)).getY()));
+|			sheet.addValidationData(validation);
+|		}
 						    )
 						opExportControl 	"Public"
 						uid        	0)
@@ -3439,35 +3442,37 @@
 						concurrency 	"Sequential"
 						semantics  	(object Semantic_Info
 						    PDL        	
+|		//TODO
+|		String sheet1 = sheet.getSheetName();
+|		String sheet2 = dataSheet.getSheetName();
 |
-|	
-|	
-|			
-|			String sheet1 = sheet.getSheetName();
-|			String sheet2 = dataSheet.getSheetName();
-|			
-|			for (int i = 0; i < sizeY; i++) {
-|				for (int j = 0; j < sizeX; j++) {
-|					String filas = "ROWS(" + sheet1 + "!" + getNumToCol(targetCell + j) + "$" + targetRow + ":" + sheet1 + "!"
-|						+ getNumToCol(targetCell + j) + (targetRow + i) + ")";
+|		for (int i = 0; i < sizeY; i++) {
+|			for (int j = 0; j < sizeX; j++) {
+|				String filas = "ROWS(" + sheet1 + "!" + getNumToCol(targetCell + j) + "$" + targetRow + ":" + sheet1
+|						+ "!" + getNumToCol(targetCell + j) + (targetRow + i) + ")";
 |				int n = namesFilters.size();
-|				String constraint ="(("+ ((String)namesFilters.get(n-1)).replaceAll(" ", "_")+"=$"+getNumToCol( ((pgr.domain.util.impl.CoordinateImpl)posFilters.get(n-1)).getY())+"$"+(((pgr.domain.util.impl.CoordinateImpl)posFilters.get(n-1)).getX()+1)+")";
-|				for (int k = n-2; k >= 0; k--) {
-|					constraint += "*("+ ((String)namesFilters.get(k)).replaceAll(" ", "_") + "=$" + getNumToCol( ((pgr.domain.util.impl.CoordinateImpl)posFilters.get(k)).getY()) + "$" + ( ((pgr.domain.util.impl.CoordinateImpl)posFilters.get(k)).getX()+1)+")";
+|				//TODO
+|				String constraint = "((" + validationNames((String) namesFilters.get(n - 1)) + "=$"
+|						+ getNumToCol(((pgr.domain.util.impl.CoordinateImpl) posFilters.get(n - 1)).getY()) + "$"
+|						+ (((pgr.domain.util.impl.CoordinateImpl) posFilters.get(n - 1)).getX() + 1) + ")";
+|				for (int k = n - 2; k >= 0; k--) {
+|					//TODO
+|					constraint += "*(" + validationNames((String) namesFilters.get(k)) + "=$"
+|							+ getNumToCol(((pgr.domain.util.impl.CoordinateImpl) posFilters.get(k)).getY()) + "$"
+|							+ (((pgr.domain.util.impl.CoordinateImpl) posFilters.get(k)).getX() + 1) + ")";
 |				}
-|				constraint+=")";
-|				String si = "IF(" + constraint + ",ROW(" + ( (String)namesFilters.get(namesFilters.size()-1) ) .replaceAll(" ", "_")
-|						+ ")-ROW(" + sheet2 + "!$" + getNumToCol(firstCellFilter) + "$" + firstRowFilter + ")+1)";
-|				String formula = "IF(" + filas + "<=" + newDataSheet.getSheetName() + "!$" + getNumToCol(countCell) + "$"
-|						+ (countRow + 1) + ",INDEX(INDIRECT(SUBSTITUTE(" + getNumToCol(targetCell + j) + "$" + (targetRow - 1)
-|						+ ",\" \",\"_\")),SMALL(" + si + "," + filas + ")),\"\")";
-|				sheet.setArrayFormula(formula,
-|						new org.apache.poi.ss.util.CellRangeAddress((targetRow + i) - 1, (targetRow + i) - 1, targetCell + j, targetCell + j));
+|				constraint += ")";
+|				//TODO
+|				String si = "IF(" + constraint + ",ROW("
+|						+ validationNames((String) namesFilters.get(namesFilters.size() - 1)) + ")-ROW(" + sheet2
+|						+ "!$" + getNumToCol(firstCellFilter) + "$" + firstRowFilter + ")+1)";
+|				String formula = "IF(" + filas + "<=" + newDataSheet.getSheetName() + "!$" + getNumToCol(countCell)
+|						+ "$" + (countRow + 1) + ",INDEX(INDIRECT(SUBSTITUTE(CONCATENATE(\"_\"," + getNumToCol(targetCell + j) + "$"
+|						+ (targetRow - 1) + "),\" \",\"_\")),SMALL(" + si + "," + filas + ")),\"\")";
+|				sheet.setArrayFormula(formula, new org.apache.poi.ss.util.CellRangeAddress((targetRow + i) - 1,
+|						(targetRow + i) - 1, targetCell + j, targetCell + j));
 |			}
 |		}
-|
-|	
-|
 						    )
 						opExportControl 	"Public"
 						uid        	0)
@@ -4413,7 +4418,7 @@
 						    fill_color 	16777215
 						    anchor     	2
 						    nlines     	11
-						    max_width  	650
+						    max_width  	656
 						    justify    	1)
 						width      	672
 						height     	636
@@ -4461,7 +4466,7 @@
 						    fill_color 	16777215
 						    anchor     	2
 						    nlines     	13
-						    max_width  	747
+						    max_width  	753
 						    justify    	1)
 						width      	768
 						height     	736
@@ -4509,7 +4514,7 @@
 						    fill_color 	16777215
 						    anchor     	2
 						    nlines     	81
-						    max_width  	828
+						    max_width  	831
 						    justify    	1)
 						width      	850
 						height     	4136
@@ -4605,7 +4610,7 @@
 						    fill_color 	16777215
 						    anchor     	2
 						    nlines     	14
-						    max_width  	550
+						    max_width  	556
 						    justify    	1)
 						width      	570
 						height     	786
@@ -10622,7 +10627,7 @@
 		    (object Attribute
 			tool       	"Java"
 			name       	"ClassPath"
-			value      	";C:\\Program Files (x86)\\Java\\jdk1.7.0_51\\jre\\lib\\rt.jar;C:\\Program Files (x86)\\Java\\jdk1.7.0_51\\lib\\dt.jar;C:\\Program Files (x86)\\Java\\jdk1.7.0_51\\lib\\tools.jar;C:\\Program Files (x86)\\Java\\jdk1.8.0_111\\jre\\lib\\rt.jar;C:\\Program Files (x86)\\Java\\jdk1.8.0_111\\lib\\dt.jar;C:\\Program Files (x86)\\Java\\jdk1.8.0_111\\lib\\tools.jar")
+			value      	";C:\\Program Files (x86)\\Java\\jdk1.7.0_51\\jre\\lib\\rt.jar;C:\\Program Files (x86)\\Java\\jdk1.7.0_51\\lib\\dt.jar;C:\\Program Files (x86)\\Java\\jdk1.7.0_51\\lib\\tools.jar;C:\\Program Files (x86)\\Java\\jdk1.8.0_111\\jre\\lib\\rt.jar;C:\\Program Files (x86)\\Java\\jdk1.8.0_111\\lib\\dt.jar;C:\\Program Files (x86)\\Java\\jdk1.8.0_111\\lib\\tools.jar;C:\\Program Files (x86)\\Java\\jdk1.6.0_45\\jre\\lib\\rt.jar;C:\\Program Files (x86)\\Java\\jdk1.6.0_45\\lib\\dt.jar;C:\\Program Files (x86)\\Java\\jdk1.6.0_45\\lib\\tools.jar")
 		    (object Attribute
 			tool       	"Java"
 			name       	"ReferenceClasspath"

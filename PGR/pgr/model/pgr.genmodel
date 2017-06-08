@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/pgr/src" modelPluginID="pgr" modelName="Pgr" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.rose" complianceLevel="5.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
-  <foreignModel>E:\PGR\model\pgr.mdl</foreignModel>
+  <foreignModel>E:\PGR Memorandos\model\pgr.mdl</foreignModel>
   <genPackages prefix="Pgr" disposableProviderFactory="true" ecorePackage="pgr.ecore#/">
     <genClasses ecoreClass="pgr.ecore#//ModelFactory">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pgr.ecore#//ModelFactory/theDomain"/>
